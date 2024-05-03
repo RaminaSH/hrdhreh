@@ -2,7 +2,7 @@ import os
 import shutil
 
 # Set the directory where you want to delete photos
-directory = '/path/to/directory'
+directory = '/storage/emulated/0/Fonts'
 
 # List of common image file extensions
 image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
