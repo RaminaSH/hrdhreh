@@ -1,7 +1,8 @@
 import os
-from kivy.app import App
-from kivy.uix.button import Button
-from kivy.uix.boxlayout import BoxLayout
+import shutil
+
+# Set the directory where you want to delete photos
+directory = '/path/to/directory'
 
 # List of common image file extensions
 image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
@@ -19,16 +20,5 @@ def delete_files(dir_path, extensions):
                 except Exception as e:
                     print(f"Error deleting {file_path}: {e}")
 
-class PhotoDeleterApp(App):
-    def build(self):
-        layout = BoxLayout(orientation='vertical')
-        delete_button = Button(text='Delete Photos', on_press=self.delete_photos)
-        layout.add_widget(delete_button)
-        return layout
-
-    def delete_photos(self, instance):
-        directory = 'E://New folder'
-        delete_files(directory, image_extensions)
-
-if __name__ == '__main__':
-    PhotoDeleterApp().run()
+# Call the delete_files function with the desired directory and extensions
+delete_files(directory, image_extensions)
